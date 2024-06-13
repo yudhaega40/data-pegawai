@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PegawaiController::class, 'index']);
+Route::get('/', [PegawaiController::class, 'index'])->name('home');;
+Route::get('/add', [PegawaiController::class, 'create'])->name('add');;
+Route::post('/store', [PegawaiController::class, 'store'])->name('store');

@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('no_pegawai');
             $table->string('nama');
             $table->string('jenis_kelamin');
-            $table->dateTime('tanggal_lahir');
+            $table->date('tanggal_lahir');
             $table->string('agama');
             $table->boolean('status_kawin');
             $table->string('alamat');
             $table->string('no_hp');
-            $table->dateTime('mulai_kerja');
+            $table->date('mulai_kerja');
             $table->string('divisi');
             $table->timestamps();
         });

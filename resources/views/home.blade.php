@@ -31,11 +31,11 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-gray-300">
         <div class="py-12 max-w-full">
-            <div class="max-w-7xl mx-auto space-y-4 px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between">
-                    <button class="border border-black rounded-md py-2 px-4">Tambah Pegawai<button>
+            <div class="max-w-7xl mx-auto space-y-4 p-4 sm:p-6 lg:p-8 bg-white sm:rounded-xl">
+                <div class="flex justify-between mb-4">
+                    <a href="{{ route('add') }}" class="border border-black rounded-md py-2 px-4"><i class="fa-solid fa-plus mr-2"></i>Tambah Pegawai<a>
                     <input type="text" id="searchBox" class="border border-gray-400 rounded-md p-2" placeholder="Search...">
                 </div>
                 <div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PegawaiController extends Controller
 {
@@ -22,7 +23,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('add');
     }
 
     /**
@@ -30,7 +31,24 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $validator = Validator::make($input, [
+            'no_pegawai' => ['required', 'string', 'max:20'],
+            'nama' => ['required', 'string', 'max:255'],
+            'mulai_kerja' => ['required'],
+            'divisi' => ['required', 'string', 'max:255'],
+            'jenis_kelamin' => ['required'],
+            'tanggal_lahir' => ['required'],
+            'agama' => ['required'],
+            'status_kawin' => ['required'],
+            'alamat' => ['required', 'string', 'max:255'],
+            'no_hp' => ['required', 'string', 'max:255'],
+        ]);
+
+        $pegawai = Pegawai::create($input);
+
+        return redirect(route('home'));
     }
 
     /**
