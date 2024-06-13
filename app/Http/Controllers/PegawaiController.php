@@ -34,7 +34,7 @@ class PegawaiController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'no_pegawai' => ['required', 'string', 'max:20'],
+            'no_pegawai' => ['required', 'string', 'max:20', 'unique:' . Pegawai::class],
             'nama' => ['required', 'string', 'max:255'],
             'mulai_kerja' => ['required'],
             'divisi' => ['required', 'string', 'max:255'],
@@ -44,9 +44,21 @@ class PegawaiController extends Controller
             'status_kawin' => ['required'],
             'alamat' => ['required', 'string', 'max:255'],
             'no_hp' => ['required', 'string', 'max:255'],
+        ],
+        [
+            'no_pegawai.unique' => 'Nomor Pegawai sudah terdaftar',
         ]);
 
+        if($validator->fails()){
+            session()->flash('error_add', $validator->errors());
+            return redirect(route('add'));
+        }
+
         $pegawai = Pegawai::create($input);
+
+        if ($pegawai) {
+            session()->flash('pegawai_success', 'Pegawai ' . $request->nama . ' Berhasil Disimpan!');
+        }
 
         return redirect(route('home'));
     }

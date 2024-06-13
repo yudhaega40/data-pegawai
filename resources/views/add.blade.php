@@ -44,6 +44,13 @@
                         <a href="{{ route('home') }}"><i class="fa-solid fa-chevron-left"></i></a>
                         <div class="text-2xl">Tambah Pegawai</div>
                     </div>
+                    <div>
+                    @if (session()->has('error_add'))
+                        <div class="bg-red-100 mb-4 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert" id="alert" name="alert">
+                            <span class="block sm:inline">{{ session('error_add') }}</span>
+                        </div>
+                    @endif
+                    </div>
                     <form method="POST" action="{{ route('store') }}">
                         @csrf
                         <div class="flex-col space-y-4">

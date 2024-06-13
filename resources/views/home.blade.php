@@ -39,6 +39,13 @@
                     <input type="text" id="searchBox" class="border border-gray-400 rounded-md p-2" placeholder="Search...">
                 </div>
                 <div>
+                    @if (session()->has('pegawai_success'))
+                        <div class="bg-green-100 mb-4 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert" id="alert" name="alert">
+                            <span class="block sm:inline">{{ session('pegawai_success') }}</span>
+                        </div>
+                    @endif
+                    </div>
+                <div>
                     <table id="tablePegawai" class="display">
                         <thead>
                             <tr>
@@ -87,4 +94,6 @@
     $('#searchBox').keyup(function(){
         oTable.search($(this).val()).draw() ;
     })
+
+    $('#alert').delay(5000).fadeOut('slow');
 </script>
