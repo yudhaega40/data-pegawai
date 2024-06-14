@@ -1,6 +1,6 @@
-Clone
-composer install
-create database 'data-pegawai'
-setting info database di .env
-php artisan migrate --seed
-php artisan serve
+Clone <br />
+composer install <br />
+create database 'data-pegawai' <br />
+setting info database di .env <br />
+php artisan migrate --seed <br />
+php artisan serve <br />
