@@ -36,7 +36,7 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
-    <body class="font-sans antialiased bg-gray-300">
+    <body class="font-sans antialiased bg-green-400">
         <div class="py-12 max-w-full">
             <div class="max-w-7xl mx-auto space-y-4 p-4 sm:p-6 lg:p-8 bg-white sm:rounded-xl">
                 <div class="flex-col space-y-8">
@@ -54,109 +54,113 @@
                     <form method="POST" action="{{ route('store') }}">
                         @csrf
                         <div class="flex-col space-y-4">
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="no_pegawai">
-                                    Nomor Pegawai
-                                </label>
-                                <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    id="no_pegawai"
-                                    name="no_pegawai" 
-                                    type="text"
-                                    required>
+                            <div class="md:flex md:space-x-4 md:justify-between space-y-4 md:space-y-0">
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="no_pegawai">
+                                        Nomor Pegawai
+                                    </label>
+                                    <input 
+                                        class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                        id="no_pegawai"
+                                        name="no_pegawai" 
+                                        type="text"
+                                        required>
+                                </div>
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="nama">
+                                        Nama Pegawai
+                                    </label>
+                                    <input 
+                                        class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                        id="nama" 
+                                        name="nama" 
+                                        type="text"
+                                        required>
+                                </div>
                             </div>
 
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="nama">
-                                    Nama Pegawai
-                                </label>
-                                <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    id="nama" 
-                                    name="nama" 
-                                    type="text"
-                                    required>
+                            <div class="md:flex md:space-x-4 md:justify-between space-y-4 md:space-y-0">
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="tanggal_lahir">
+                                        Tanggal Lahir
+                                    </label>
+                                    <input 
+                                        class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                        id="tanggal_lahir" 
+                                        name="tanggal_lahir"
+                                        type="text"
+                                        required>
+                                </div>
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="mulai_kerja">
+                                        Tanggal Mulai Kerja
+                                    </label>
+                                    <input 
+                                        class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                        id="mulai_kerja" 
+                                        name="mulai_kerja" 
+                                        type="text"
+                                        required>
+                                </div>
                             </div>
 
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="mulai_kerja">
-                                    Tanggal Mulai Kerja
-                                </label>
-                                <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    id="mulai_kerja" 
-                                    name="mulai_kerja" 
-                                    type="text"
-                                    required>
+                            <div class="md:flex md:space-x-4 md:justify-between space-y-4 md:space-y-0">
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="jenis_kelamin">
+                                        Jenis Kelamin
+                                    </label>
+                                    <select 
+                                        class="gender-selector w-full" 
+                                        name="jenis_kelamin"
+                                        id="jenis_kelamin">
+                                        <option value="L">Laki-Laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
+                                </div>
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="agama">
+                                        Agama
+                                    </label>
+                                    <select 
+                                        class="religion-selector w-full" 
+                                        name="agama"
+                                        id="agama">
+                                        <option value="Islam">Islam</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Lain lain">Lain lain</option>
+                                    </select>
+                                </div>
                             </div>
 
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="divisi">
-                                    Divisi
-                                </label>
-                                <select 
-                                    class="division-selector w-full" 
-                                    name="divisi"
-                                    id="divisi">
-                                    <option value="HRD">HRD</option>
-                                    <option value="IT">IT</option>
-                                    <option value="Sales">Sales</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="jenis_kelamin">
-                                    Jenis Kelamin
-                                </label>
-                                <select 
-                                    class="gender-selector w-full" 
-                                    name="jenis_kelamin"
-                                    id="jenis_kelamin">
-                                    <option value="L">Laki-Laki</option>
-                                    <option value="P">Perempuan</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="tanggal_lahir">
-                                Tanggal Lahir
-                                </label>
-                                <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    id="tanggal_lahir" 
-                                    name="tanggal_lahir"
-                                    type="text"
-                                    required>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="agama">
-                                    Agama
-                                </label>
-                                <select 
-                                    class="religion-selector w-full" 
-                                    name="agama"
-                                    id="agama">
-                                    <option value="Islam">Islam</option>
-                                    <option value="Katolik">Katolik</option>
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Budha">Budha</option>
-                                    <option value="Lain lain">Lain lain</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 text-sm font-semibold mb-2" for="status_kawin">
-                                    Status Kawin
-                                </label>
-                                <select 
-                                    class="marriage-selector w-full" 
-                                    name="status_kawin"
-                                    id="status_kawin">
-                                    <option value="0">Single</option>
-                                    <option value="1">Menikah</option>
-                                </select>
+                            <div class="md:flex md:space-x-4 md:justify-between space-y-4 md:space-y-0">
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="status_kawin">
+                                        Status Kawin
+                                    </label>
+                                    <select 
+                                        class="marriage-selector w-full" 
+                                        name="status_kawin"
+                                        id="status_kawin">
+                                        <option value="0">Single</option>
+                                        <option value="1">Menikah</option>
+                                    </select>
+                                </div>
+                                <div class="w-full">
+                                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="divisi">
+                                        Divisi
+                                    </label>
+                                    <select 
+                                        class="division-selector w-full" 
+                                        name="divisi"
+                                        id="divisi">
+                                        <option value="HRD">HRD</option>
+                                        <option value="IT">IT</option>
+                                        <option value="Sales">Sales</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div>
@@ -164,7 +168,7 @@
                                     Alamat
                                 </label>
                                 <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                    class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                     id="alamat" 
                                     name="alamat"
                                     type="text"
@@ -176,7 +180,7 @@
                                     Nomor HP
                                 </label>
                                 <input 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                    class="appearance-none border border-slate-400 rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                     id="no_hp" 
                                     name="no_hp"
                                     type="text"

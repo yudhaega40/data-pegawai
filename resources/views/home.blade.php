@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     </head>
-    <body class="font-sans antialiased bg-gray-300">
+    <body class="font-sans antialiased bg-green-400">
         <div class="py-12 max-w-full">
             <div class="max-w-7xl mx-auto space-y-4 p-4 sm:p-6 lg:p-8 bg-white sm:rounded-xl">
                 <div class="flex justify-between mb-4">
